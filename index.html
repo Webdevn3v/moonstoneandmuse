@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#171218" />
+  <meta name="description" content="Request a custom handmade creation from Moonstone & Muse." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Custom Orders | Moonstone & Muse" />
+  <meta
+    property="og:description"
+    content="Commission a one-of-a-kind beaded curtain, decorative hanging, jewelry piece, or handcrafted gift from Moonstone & Muse."
+  />
+  <!-- Replace YOUR-USERNAME and YOUR-REPO after GitHub Pages is published. -->
+  <meta
+    property="og:image"
+    content="https://YOUR-USERNAME.github.io/YOUR-REPO/assets/moonstone-muse-social-preview.jpg"
+  />
+  <meta property="og:image:alt" content="A handcrafted Moonstone & Muse beaded creation." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23171218'/%3E%3Cpath d='M42.5 47.5A22 22 0 1 1 39 17a17 17 0 1 0 3.5 30.5Z' fill='%23c8a66b'/%3E%3Ccircle cx='45' cy='18' r='2.2' fill='%23c8a66b'/%3E%3C/svg%3E"
+  />
+
+  <title>Custom Orders | Moonstone & Muse</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #171218;
+      --charcoal: #211b22;
+      --cream: #f6f0e9;
+      --paper: #fffaf5;
+      --mauve: #9d748b;
+      --plum: #603d51;
+      --gold: #c8a66b;
+      --muted: #746a70;
+      --line: rgba(96, 61, 81, 0.16);
+      --shadow: 0 22px 60px rgba(36, 24, 31, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      font-family: "Montserrat", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(157, 116, 139, 0.2), transparent 28rem),
+        radial-gradient(circle at 88% 80%, rgba(200, 166, 107, 0.15), transparent 26rem),
+        var(--cream);
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding:
+        max(54px, env(safe-area-inset-top))
+        20px
+        88px;
+      color: var(--paper);
+      text-align: center;
+      background:
+        linear-gradient(rgba(17, 14, 18, 0.77), rgba(24, 18, 23, 0.92)),
+        url("assets/nina-beaded-piece.jpg") center 42% / cover no-repeat,
+        linear-gradient(135deg, #171218, #603d51);
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(200, 166, 107, 0.22);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero::before {
+      top: -165px;
+      left: -120px;
+    }
+
+    .hero::after {
+      right: -145px;
+      bottom: -185px;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      opacity: 0.26;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, #ffffff 1px, transparent 1px),
+        radial-gradient(circle, #c8a66b 1px, transparent 1px);
+      background-position: 0 0, 34px 44px;
+      background-size: 92px 92px, 124px 124px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(720px, 100%);
+      margin: 0 auto;
+    }
+
+    .moon-mark {
+      display: grid;
+      width: 66px;
+      height: 66px;
+      margin: 0 auto 22px;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 31px;
+      box-shadow: 0 0 34px rgba(200, 166, 107, 0.2);
+    }
+
+    .eyebrow {
+      margin: 0 0 11px;
+      color: var(--gold);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.15rem, 14vw, 6.3rem);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 0.86;
+    }
+
+    .hero p:last-of-type {
+      max-width: 590px;
+      margin: 24px auto 0;
+      color: rgba(255, 250, 245, 0.8);
+      font-size: 0.96rem;
+      line-height: 1.75;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      min-height: 50px;
+      margin-top: 28px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      background: var(--gold);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+    }
+
+    main {
+      width: min(980px, calc(100% - 20px));
+      margin: -42px auto 0;
+      padding-bottom: 64px;
+    }
+
+    .form-card {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      border: 1px solid rgba(200, 166, 107, 0.35);
+      border-radius: 24px;
+      background: rgba(255, 250, 245, 0.97);
+      box-shadow: var(--shadow);
+    }
+
+    .form-intro {
+      padding: 30px 22px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(120deg, rgba(157, 116, 139, 0.13), rgba(200, 166, 107, 0.08));
+    }
+
+    .form-intro h2 {
+      margin: 0 0 12px;
+      color: var(--plum);
+      font-size: clamp(2.25rem, 10vw, 3.4rem);
+      line-height: 0.98;
+    }
+
+    .form-intro p {
+      margin: 0;
+      color: #655a61;
+      font-size: 0.92rem;
+      line-height: 1.72;
+    }
+
+    .event-note {
+      margin-top: 22px;
+      padding: 18px;
+      border: 1px solid rgba(200, 166, 107, 0.46);
+      border-radius: 16px;
+      color: #5e5148;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .event-note strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--plum);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+    }
+
+    form {
+      padding: 30px 20px 34px;
+    }
+
+    .form-section + .form-section {
+      margin-top: 40px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 22px;
+      align-items: flex-start;
+    }
+
+    .section-number {
+      display: grid;
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--plum);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .section-heading h3 {
+      margin: 0;
+      color: var(--plum);
+      font-size: 1.72rem;
+      line-height: 1;
+    }
+
+    .section-heading p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 0.81rem;
+      line-height: 1.55;
+    }
+
+    .field-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label,
+    legend {
+      color: #40363c;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .required {
+      color: var(--plum);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(96, 61, 81, 0.24);
+      border-radius: 12px;
+      outline: none;
+      color: var(--ink);
+      background: #fffdf9;
+      transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+    }
+
+    input,
+    select {
+      min-height: 52px;
+      padding: 0 14px;
+    }
+
+    select {
+      padding-right: 40px;
+      background-image:
+        linear-gradient(45deg, transparent 50%, var(--plum) 50%),
+        linear-gradient(135deg, var(--plum) 50%, transparent 50%);
+      background-position:
+        calc(100% - 18px) 22px,
+        calc(100% - 13px) 22px;
+      background-size: 5px 5px, 5px 5px;
+      background-repeat: no-repeat;
+    }
+
+    textarea {
+      min-height: 132px;
+      padding: 14px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(200, 166, 107, 0.14);
+    }
+
+    input[type="file"] {
+      min-height: auto;
+      padding: 12px;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    legend {
+      margin-bottom: 12px;
+    }
+
+    .choice-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .choice-card {
+      position: relative;
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      border: 1px solid rgba(96, 61, 81, 0.22);
+      border-radius: 14px;
+      text-align: center;
+      background: #fffdf9;
+    }
+
+    .choice-card input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .choice-card span {
+      color: #4e4249;
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .choice-card:has(input:checked) {
+      border-color: var(--plum);
+      background: rgba(157, 116, 139, 0.13);
+      box-shadow: 0 0 0 3px rgba(157, 116, 139, 0.09);
+    }
+
+    .helper-text,
+    .submit-note {
+      margin: 0;
+      color: #81757c;
+      font-size: 0.73rem;
+      line-height: 1.5;
+    }
+
+    .agreement {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+      align-items: flex-start;
+      color: #675c62;
+      font-size: 0.76rem;
+      line-height: 1.55;
+    }
+
+    .agreement input {
+      flex: 0 0 auto;
+      width: 18px;
+      min-height: auto;
+      height: 18px;
+      margin-top: 2px;
+      border-radius: 4px;
+      accent-color: var(--plum);
+    }
+
+    .submit-row {
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .submit-button {
+      width: 100%;
+      min-height: 54px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 999px;
+      color: white;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: var(--plum);
+      box-shadow: 0 12px 24px rgba(96, 61, 81, 0.2);
+    }
+
+    .success-screen {
+      display: none;
+      padding: 60px 22px;
+      text-align: center;
+    }
+
+    .success-screen.visible {
+      display: block;
+    }
+
+    .success-icon {
+      display: grid;
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 22px;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 1.9rem;
+      background: var(--charcoal);
+    }
+
+    .success-screen h2 {
+      margin: 0;
+      color: var(--plum);
+      font-size: clamp(2.4rem, 10vw, 4rem);
+      line-height: 1;
+    }
+
+    .success-screen p {
+      max-width: 580px;
+      margin: 18px auto 0;
+      color: #6b6066;
+      font-size: 0.9rem;
+      line-height: 1.72;
+    }
+
+    .reset-button {
+      min-height: 46px;
+      margin-top: 24px;
+      padding: 0 18px;
+      border: 1px solid var(--plum);
+      border-radius: 999px;
+      color: var(--plum);
+      font-size: 0.76rem;
+      font-weight: 700;
+      background: transparent;
+    }
+
+    footer {
+      padding:
+        26px
+        20px
+        max(30px, env(safe-area-inset-bottom));
+      color: #756a70;
+      text-align: center;
+      font-size: 0.74rem;
+      line-height: 1.65;
+    }
+
+    footer strong {
+      color: var(--plum);
+    }
+
+    @media (min-width: 700px) {
+      .hero {
+        padding-top: 70px;
+        padding-bottom: 105px;
+      }
+
+      main {
+        width: min(980px, calc(100% - 36px));
+        margin-top: -54px;
+      }
+
+      .form-intro {
+        display: grid;
+        grid-template-columns: 1.45fr 0.75fr;
+        gap: 30px;
+        padding: 42px;
+      }
+
+      .event-note {
+        margin-top: 0;
+        align-self: center;
+      }
+
+      form {
+        padding: 42px;
+      }
+
+      .field-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .field.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .choice-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .submit-row {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+
+      .submit-button {
+        width: auto;
+        min-width: 210px;
+      }
+    }
+
+    @media (hover: hover) {
+      .hero-button,
+      .choice-card,
+      .submit-button,
+      .reset-button {
+        transition:
+          transform 160ms ease,
+          background 160ms ease,
+          border-color 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .hero-button:hover,
+      .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow:
+          0 0 22px rgba(200, 166, 107, 0.4),
+          0 12px 26px rgba(0, 0, 0, 0.18);
+      }
+
+      .choice-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--gold);
+        box-shadow: 0 0 18px rgba(200, 166, 107, 0.35);
+      }
+
+      .reset-button:hover {
+        box-shadow: 0 0 14px rgba(96, 61, 81, 0.25);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="stars" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="moon-mark" aria-hidden="true">☾</div>
+
+      <p class="eyebrow">Handmade • Reimagined • One of One</p>
+
+      <h1>Moonstone<br />& Muse</h1>
+
+      <p>
+        Have an idea in mind? Tell us what you are imagining and we’ll begin
+        creating a custom piece that feels completely your own.
+      </p>
+
+      <a class="hero-button" href="#custom-order">Start Your Custom Order</a>
+    </div>
+  </header>
+
+  <main id="custom-order">
+    <section class="form-card">
+      <div id="formContent">
+        <div class="form-intro">
+          <div>
+            <p class="eyebrow">Custom Request Form</p>
+
+            <h2>Let’s create something unforgettable.</h2>
+
+            <p>
+              Complete the form below with as much detail as possible.
+              Submitting a request does not require payment and does not
+              guarantee the final order. Nina will review your idea and contact
+              you to discuss the design, price, and timeline.
+            </p>
+          </div>
+
+          <aside class="event-note">
+            <strong>Found us at an event?</strong>
+            Mention the event or booth in your notes so we know where we met you.
+          </aside>
+        </div>
+
+        <form id="customOrderForm">
+          <section class="form-section">
+            <div class="section-heading">
+              <span class="section-number">01</span>
+              <div>
+                <h3>Tell us about you</h3>
+                <p>Where should Nina contact you about your custom request?</p>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="name">Full name <span class="required">*</span></label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email address <span class="required">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional" />
+              </div>
+
+              <div class="field">
+                <label for="contactMethod">Preferred contact method</label>
+                <select id="contactMethod" name="contactMethod">
+                  <option value="Email">Email</option>
+                  <option value="Text message">Text message</option>
+                  <option value="Phone call">Phone call</option>
+                  <option value="Instagram">Instagram message</option>
+                </select>
+              </div>
+
+              <div class="field full-width">
+                <label for="socialHandle">Instagram or social media handle</label>
+                <input id="socialHandle" name="socialHandle" type="text" placeholder="@yourhandle" />
+              </div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="section-heading">
+              <span class="section-number">02</span>
+              <div>
+                <h3>Choose your creation</h3>
+                <p>Select the type of custom piece you are interested in.</p>
+              </div>
+            </div>
+
+            <fieldset>
+              <legend>
+                What would you like Nina to create?
+                <span class="required">*</span>
+              </legend>
+
+              <div class="choice-grid">
+                <label class="choice-card">
+                  <input type="radio" name="orderType" value="Beaded curtain" required />
+                  <span>Custom Beaded Curtain</span>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="orderType" value="Decorative hanging" />
+                  <span>Decorative Hanging</span>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="orderType" value="Jewelry" />
+                  <span>Custom Jewelry</span>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="orderType" value="Repurposed jewelry piece" />
+                  <span>Repurposed Jewelry Piece</span>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="orderType" value="Gift" />
+                  <span>Custom Gift</span>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="orderType" value="Other" />
+                  <span>Something Else</span>
+                </label>
+              </div>
+            </fieldset>
+          </section>
+
+          <section class="form-section">
+            <div class="section-heading">
+              <span class="section-number">03</span>
+              <div>
+                <h3>Share your vision</h3>
+                <p>
+                  Colors, mood, materials, dimensions, and inspiration all help
+                  bring the idea to life.
+                </p>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field full-width">
+                <label for="vision">
+                  Describe your custom idea <span class="required">*</span>
+                </label>
+                <textarea
+                  id="vision"
+                  name="vision"
+                  placeholder="Tell us what you are imagining, where it will be used, who it is for, and any details that matter to you..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="field">
+                <label for="colors">Preferred colors</label>
+                <input id="colors" name="colors" type="text" placeholder="Example: black, plum, gold" />
+              </div>
+
+              <div class="field">
+                <label for="style">Overall style or mood</label>
+                <select id="style" name="style">
+                  <option value="">Select a style</option>
+                  <option value="Gothic">Gothic</option>
+                  <option value="Bohemian">Bohemian</option>
+                  <option value="Celestial">Celestial</option>
+                  <option value="Romantic">Romantic</option>
+                  <option value="Vintage">Vintage</option>
+                  <option value="Colorful">Colorful</option>
+                  <option value="Minimal">Minimal</option>
+                  <option value="Surprise me">Surprise me</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="width">Approximate width</label>
+                <input id="width" name="width" type="text" placeholder="Example: 36 inches" />
+              </div>
+
+              <div class="field">
+                <label for="height">Approximate height or length</label>
+                <input id="height" name="height" type="text" placeholder="Example: 72 inches" />
+              </div>
+
+              <div class="field full-width">
+                <label for="materials">Materials, beads, charms, or details you love</label>
+                <input
+                  id="materials"
+                  name="materials"
+                  type="text"
+                  placeholder="Example: pearls, chains, moon charms, crystals, vintage beads"
+                />
+              </div>
+
+              <div class="field full-width">
+                <label for="inspiration">Inspiration image</label>
+                <input id="inspiration" name="inspiration" type="file" accept="image/*" />
+                <p class="helper-text">
+                  Visual demo only. Image uploading will be activated when the
+                  form is connected to a submission service.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="section-heading">
+              <span class="section-number">04</span>
+              <div>
+                <h3>Budget and timing</h3>
+                <p>
+                  This helps Nina determine the right materials and design
+                  approach before contacting you.
+                </p>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="budget">Estimated budget <span class="required">*</span></label>
+                <select id="budget" name="budget" required>
+                  <option value="">Choose a budget range</option>
+                  <option value="Under $50">Under $50</option>
+                  <option value="$50–$100">$50–$100</option>
+                  <option value="$100–$200">$100–$200</option>
+                  <option value="$200–$350">$200–$350</option>
+                  <option value="$350+">$350+</option>
+                  <option value="Not sure">I’m not sure yet</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="deadline">Desired completion date</label>
+                <input id="deadline" name="deadline" type="date" />
+              </div>
+
+              <div class="field full-width">
+                <label for="occasion">Is this for a special occasion?</label>
+                <input
+                  id="occasion"
+                  name="occasion"
+                  type="text"
+                  placeholder="Wedding, birthday, home décor, gift, event, etc."
+                />
+              </div>
+
+              <div class="field full-width">
+                <label for="additionalNotes">Anything else Nina should know?</label>
+                <textarea
+                  id="additionalNotes"
+                  name="additionalNotes"
+                  placeholder="Include where you met Nina, delivery questions, special requests, or anything else you would like to share."
+                ></textarea>
+              </div>
+            </div>
+
+            <label class="agreement">
+              <input type="checkbox" name="agreement" required />
+              <span>
+                I understand that this is a custom-order request, not a completed
+                purchase. Pricing, design details, deposit requirements, and
+                timing will be confirmed before work begins.
+              </span>
+            </label>
+
+            <div class="submit-row">
+              <p class="submit-note">
+                Custom pieces may require a non-refundable deposit before
+                materials are purchased or production begins.
+              </p>
+
+              <button class="submit-button" type="submit">Send My Request</button>
+            </div>
+          </section>
+        </form>
+      </div>
+
+      <div id="successScreen" class="success-screen" aria-live="polite">
+        <div class="success-icon" aria-hidden="true">✦</div>
+        <p class="eyebrow">Request Received</p>
+        <h2>Thank you, <span id="customerName">beautiful soul</span>.</h2>
+        <p>
+          Your custom-order vision has been saved for this demonstration.
+          Once the live submission system is connected, Nina will receive each
+          request and follow up to discuss the next steps.
+        </p>
+        <button id="resetButton" class="reset-button" type="button">
+          Submit Another Request
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Moonstone & Muse</strong><br />
+    Handmade pieces inspired by individuality, reinvention, and a little magic.
+  </footer>
+
+  <script>
+    const form = document.getElementById("customOrderForm");
+    const formContent = document.getElementById("formContent");
+    const successScreen = document.getElementById("successScreen");
+    const customerName = document.getElementById("customerName");
+    const resetButton = document.getElementById("resetButton");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const firstName =
+        document.getElementById("name").value.trim().split(" ")[0] ||
+        "beautiful soul";
+
+      customerName.textContent = firstName;
+      formContent.hidden = true;
+      successScreen.classList.add("visible");
+
+      document.getElementById("custom-order").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+
+    resetButton.addEventListener("click", function () {
+      form.reset();
+      successScreen.classList.remove("visible");
+      formContent.hidden = false;
+
+      document.getElementById("custom-order").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  </script>
+</body>
+</html>
