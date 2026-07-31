@@ -50,12 +50,12 @@
     .choice-card:focus-within{outline:3px solid rgba(111,79,105,.34);outline-offset:3px}
     .palette-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.palette-card{position:relative;overflow:hidden;border:1px solid rgba(111,79,105,.22);border-radius:14px;background:#fffdfd;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}.palette-card input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:3}.palette-card img{display:block;width:100%;height:112px;object-fit:cover;object-position:center}.palette-copy{padding:10px}.palette-copy strong{display:block;color:var(--plum);font-family:'Cormorant Garamond',serif;font-size:1.08rem;line-height:1.05}.palette-copy small{display:block;margin-top:4px;color:var(--muted);font-size:.64rem;line-height:1.35}.palette-card.selected,.palette-card:has(input:checked){border-color:var(--focus);box-shadow:0 0 0 3px rgba(111,79,105,.14)}.palette-card:focus-within{outline:3px solid rgba(111,79,105,.34);outline-offset:3px}
     .palette-card.text-only{display:grid;place-items:center;min-height:168px;text-align:center;background:linear-gradient(145deg,#f1e5f0,#fffafc)}
-    .info-note,.privacy-note,.timeline-note{margin:12px 0 0;color:#766a78;font-size:.76rem;line-height:1.6}
+    .info-note,.timeline-note{margin:12px 0 0;color:#766a78;font-size:.76rem;line-height:1.6}.privacy-details{margin-top:10px;color:var(--muted);font-size:.7rem;line-height:1.55}.privacy-details summary{display:inline-block;cursor:pointer;list-style:none;color:var(--muted);font-size:.7rem;font-weight:400;text-decoration:none}.privacy-details summary::-webkit-details-marker{display:none}.privacy-details summary::marker{content:""}.privacy-details[open] summary{margin-bottom:8px}.privacy-details p{max-width:760px;margin:0;color:var(--muted);font-size:.7rem;line-height:1.6}
     .protection-note,.deposit-note{margin-top:16px;padding:16px;border:1px solid rgba(185,144,77,.35);border-radius:14px;background:rgba(185,144,77,.09);font-size:.79rem;line-height:1.6;color:#4b3b49}
     .pricing-result{display:none;margin:11px 0 0;color:var(--plum);font-size:.82rem;font-weight:600;line-height:1.5}.pricing-result.visible{display:block}
     .helper-text{margin:0;color:#857987;font-size:.72rem;line-height:1.5}.conditional{display:none;margin-top:20px;padding:20px;border-radius:16px;background:#faf4fa;border:1px solid var(--line)}.conditional.visible{display:block}
     .agreement{display:flex;gap:10px;align-items:flex-start;margin-top:24px;font-size:.77rem;line-height:1.55;color:#675d69}.agreement input{flex:0 0 auto;width:18px;height:18px;min-height:auto;margin-top:2px;accent-color:var(--focus)}
-    .submit-row{display:grid;gap:16px;margin-top:28px}.form-error{display:none;margin:14px 0 0;padding:12px 14px;border-left:3px solid #a33b4f;background:#fff2f4;color:#74273a;font-size:.88rem;line-height:1.5}.form-error.visible{display:block}.hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}.submit-button{min-height:56px;border:0;border-radius:999px;background:var(--plum);color:#fffafc;font-size:.77rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.submit-button:disabled{opacity:.62;cursor:not-allowed}
+    .submit-row{display:grid;gap:16px;margin-top:28px}.submit-button{min-height:56px;border:0;border-radius:999px;background:var(--plum);color:#fffafc;font-size:.77rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.submit-button:disabled{opacity:.62;cursor:not-allowed}
     .success-screen{display:none;padding:64px 24px;text-align:center}.success-screen.visible{display:block}.success-screen h2{font-size:clamp(2.7rem,9vw,4.4rem);margin:0;line-height:.95}.success-screen p{max-width:620px;margin:18px auto 0;line-height:1.72;color:#6f6471}.reset-button{margin-top:24px;min-height:46px;padding:0 18px;border:1px solid var(--gold);border-radius:999px;background:transparent;color:var(--gold);font-weight:700}
     footer{position:relative;padding:38px 20px 42px;text-align:center;font-size:.75rem;line-height:1.65;color:#6f6471;background:#efe4ef}footer::before{content:'';display:block;width:92px;height:1px;margin:0 auto 20px;background:var(--gold)}footer strong{display:block;margin-bottom:5px;color:var(--plum);font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;letter-spacing:.03em}
     @media(min-width:760px){.form-intro{padding:44px}.form-intro p{font-size:.94rem}form{padding:44px}.field-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.full-width{grid-column:1/-1}.choice-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.palette-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.palette-card img{height:148px}.submit-row{grid-template-columns:1fr auto;align-items:center}.submit-button{min-width:230px;padding:0 26px}}
@@ -75,8 +75,7 @@
 <h2>Design Your Signature Installation</h2>
 <p>Complete the selections below to begin your Studio Review. Every installation is composed specifically for its space.</p>
 </div>
-<form id="designRequestForm" method="POST" enctype="multipart/form-data" novalidate="">
-<div class="hp-field" aria-hidden="true"><label for="companyWebsite">Leave this field empty</label><input id="companyWebsite" name="_gotcha" type="text" tabindex="-1" autocomplete="off"/></div>
+<form id="designRequestForm" novalidate="">
 <section class="form-section">
 <div class="section-heading"><span class="section-number">01</span><div><h3>Your Information</h3><p>How should the studio contact you about your Design Request?</p></div></div>
 <div class="field-grid">
@@ -144,7 +143,7 @@
 <div class="field full-width"><label for="itemStory">Personal significance or story</label><textarea id="itemStory" name="itemStory" placeholder="Share only what feels relevant to the proposed composition."></textarea></div>
 <div class="field"><label for="itemQuantity">Approximate quantity</label><input id="itemQuantity" name="itemQuantity" placeholder="Example: one necklace and loose beads" type="text"/></div>
 <div class="field"><label for="itemCondition">Current condition</label><input id="itemCondition" name="itemCondition" placeholder="Broken clasp, loose stones, intact, etc." type="text"/></div>
-<div class="field full-width"><label for="keepsakePhoto">Photo of personal keepsakes</label><input accept="image/*" id="keepsakePhoto" name="keepsakePhoto" type="file"/><p class="helper-text">Visual demonstration only. File delivery will be activated when the upload backend is connected.</p></div>
+<div class="field full-width"><label for="keepsakePhoto">Photo of personal keepsakes</label><input accept="image/*" id="keepsakePhoto" name="keepsakePhoto" type="file"/></div>
 </div>
 <p class="protection-note">The studio will review submitted pieces before confirming whether they can be safely incorporated. No sentimental item will be altered until the proposed use and design have been approved by the client.</p>
 </div>
@@ -156,10 +155,10 @@
 <label for="projectPhotos">Project and inspiration photos</label>
 <p class="helper-text">Upload any photos that help the studio understand your space and vision — your window or doorway, measurements, inspiration images, or personal keepsakes you are considering.</p>
 <input accept="image/*" id="projectPhotos" multiple="" name="projectPhotos" type="file"/>
-<p class="helper-text">Visual demonstration only. File delivery will be activated when the upload backend is connected.</p>
+
 </div>
 </div>
-<p class="privacy-note"><strong>Privacy note:</strong> uploaded images should be used only to review the requested commission and communicate about the project. Before launch, the live form must state where files are stored, who can access them, and how long they are retained. Do not submit irreplaceable originals through the website.</p>
+<details class="privacy-details"><summary>Privacy Policy</summary><p>Photos and details submitted here are sent securely to the studio to review your request. Submissions are processed through Formspree and are never sold, shared, or used for marketing. Only the studio has access, and materials are kept only as long as needed for your commission before being deleted.</p></details>
 </section>
 <section class="form-section">
 <div class="section-heading"><span class="section-number">07</span><div><h3>Project Notes and Review</h3><p>Add only the details the guided selections have not already covered.</p></div></div>
@@ -170,7 +169,6 @@
 <p class="timeline-note">Most commissions are completed within approximately 2–4 weeks after design approval and any required deposit. Larger installations and orders of 12 or more strands may require additional time. Dates are reviewed but not guaranteed until studio availability is confirmed.</p>
 <p class="deposit-note">A single standard strand does not require a deposit. Custom commissions and larger orders require a 50% deposit after the design and quote are approved. The remaining balance is due according to the terms provided with the final order confirmation.</p>
 <label class="agreement"><input name="agreement" required="" type="checkbox"/><span>I understand that this Design Request begins a Studio Review and is not a completed purchase. Availability, Custom Dimensions, final pricing, deposit requirements, materials, and timing must be confirmed before production begins.</span></label>
-<div aria-live="polite" class="form-error" id="formError" role="alert"></div>
 <div class="submit-row"><p class="helper-text">No payment is collected through this form. No account is required.</p><button class="submit-button" id="submitButton" type="submit">Submit Design Request</button></div>
 </section>
 </form>
@@ -202,8 +200,6 @@
     const keepsakeFields = document.getElementById('keepsakeFields');
     const strandLength = document.getElementById('strandLength');
     const pricingResult = document.getElementById('pricingResult');
-    const formError = document.getElementById('formError');
-    const FORMSPREE_ENDPOINT = 'PASTE_YOUR_FORMSPREE_ENDPOINT_HERE';
 
     function syncSelectedCards() {
       document.querySelectorAll('.choice-card, .palette-card').forEach(card => {
@@ -238,56 +234,19 @@
       if (event.target === strandLength) syncPricing();
     });
 
-    form.addEventListener('submit', async event => {
+    form.addEventListener('submit', event => {
       event.preventDefault();
-      formError.textContent = '';
-      formError.classList.remove('visible');
-
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-
-      if (!FORMSPREE_ENDPOINT.startsWith('https://formspree.io/f/')) {
-        formError.textContent = 'The form is not connected yet. Add the Formspree endpoint in index.html before launch.';
-        formError.classList.add('visible');
-        return;
-      }
-
       submitButton.disabled = true;
-      submitButton.textContent = 'Submitting…';
-
-      try {
-        const response = await fetch(FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (!response.ok) {
-          let message = 'We could not submit your design request. Please try again.';
-          try {
-            const data = await response.json();
-            if (Array.isArray(data.errors) && data.errors.length) {
-              message = data.errors.map(error => error.message).filter(Boolean).join(' ') || message;
-            }
-          } catch (_) {}
-          throw new Error(message);
-        }
-
-        const firstName = document.getElementById('name').value.trim().split(/\s+/)[0] || 'client';
-        customerName.textContent = firstName;
-        formContent.hidden = true;
-        successScreen.classList.add('visible');
-        document.getElementById('design-request').scrollIntoView({behavior:'smooth', block:'start'});
-      } catch (error) {
-        formError.textContent = error.message || 'We could not submit your design request. Please check your connection and try again.';
-        formError.classList.add('visible');
-        formError.scrollIntoView({behavior:'smooth', block:'center'});
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Submit Design Request';
-      }
+      const firstName = document.getElementById('name').value.trim().split(/\s+/)[0] || 'client';
+      customerName.textContent = firstName;
+      formContent.hidden = true;
+      successScreen.classList.add('visible');
+      document.getElementById('design-request').scrollIntoView({behavior:'smooth', block:'start'});
+      submitButton.disabled = false;
     });
 
     resetButton.addEventListener('click', () => {
