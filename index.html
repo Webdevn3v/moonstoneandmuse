@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#6f4f69" />
+  <meta name="theme-color" content="#f3ebf2" />
   <meta name="description" content="Submit a design request for handcrafted Signature Window Strands and bespoke Beaded Installations from Moonstone & Muse." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Design Request | Moonstone & Muse" />
   <meta property="og:description" content="Explore Signature Palettes and request a one-of-a-kind beaded installation composed for your space." />
   <!-- TODO: Replace with the final public GitHub Pages or custom-domain URL before launch. -->
-  <meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/assets/moonlit_muse_set_mockup.png" />
+  <meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/assets/hero-window-strands.png" />
   <meta property="og:image:alt" content="Handcrafted beaded window strands filtering warm natural light." />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Design Request | Moonstone & Muse</title>
@@ -18,41 +18,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink:#4b3448; --cream:#eee4ec; --paper:#fffaf7; --plum:#6f4f69;
-      --mauve:#b996ad; --gold:#c3a05d; --line:rgba(111,79,105,.18); --muted:#786b75;
-      --shadow:0 28px 80px rgba(75,52,72,.18); --focus:#6f4f69;
+      --ink:#2d1b2f; --cream:#f5eef5; --paper:#fffafc; --plum:#4a214f;
+      --mauve:#8f6b8f; --gold:#b9904d; --line:rgba(74,33,79,.16); --muted:#746776;
+      --shadow:0 24px 70px rgba(58,32,60,.14); --focus:#7a4b7f;
     }
     *{box-sizing:border-box} html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-    body{margin:0;min-width:320px;color:var(--ink);font-family:Montserrat,sans-serif;background:var(--cream)}
+    body{margin:0;min-width:320px;color:var(--ink);font-family:Montserrat,sans-serif;background:linear-gradient(180deg,#f7f1f7 0%,#f1e7f1 52%,#fbf7fb 100%)}
     button,input,select,textarea{font:inherit} button{cursor:pointer}
-    .hero{min-height:70vh;display:grid;place-items:end center;position:relative;overflow:hidden;padding:80px 20px 105px;color:white;text-align:center;background:linear-gradient(180deg,rgba(43,27,39,.10),rgba(43,27,39,.62)),url('assets/moonlit_muse_set_mockup.png') center 48%/cover no-repeat}
+    .hero{min-height:70vh;display:grid;place-items:end center;position:relative;overflow:hidden;padding:80px 20px 105px;color:white;text-align:center;background:linear-gradient(180deg,rgba(20,7,25,.18),rgba(20,7,25,.78)),url('assets/hero-window-strands.png') center 48%/cover no-repeat}
     .hero-inner{width:min(780px,100%);position:relative;z-index:1}.eyebrow{margin:0 0 12px;font-size:.73rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#f0d9aa}
     h1,h2,h3{font-family:'Cormorant Garamond',serif} h1{margin:0;font-size:clamp(3.4rem,12vw,7.4rem);line-height:.82;font-weight:600;letter-spacing:-.045em}
-    .hero-copy{max-width:620px;margin:24px auto 0;line-height:1.75;color:rgba(255,255,255,.88)}
-    .hero-button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;margin-top:28px;padding:0 24px;border-radius:999px;background:#f2dfb7;color:#4b3448;text-decoration:none;font-size:.75rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+    .hero-copy{max-width:620px;margin:24px auto 0;line-height:1.75;color:#f7ead0;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+    .hero-button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;margin-top:28px;padding:0 24px;border-radius:999px;background:var(--gold);color:#201027;text-decoration:none;font-size:.75rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
     main{width:min(1080px,calc(100% - 20px));margin:-54px auto 0;padding-bottom:70px;position:relative;z-index:2}
-    .form-card{overflow:hidden;border:1px solid rgba(111,79,105,.24);border-radius:24px;background:rgba(255,250,247,.98);box-shadow:var(--shadow)}
-    .form-intro{position:relative;padding:34px 22px 36px;border-bottom:1px solid var(--line);background:linear-gradient(125deg,rgba(185,150,173,.24),rgba(255,250,247,.94))}.form-intro::before{content:'';position:absolute;left:22px;top:31px;width:46px;height:2px;background:var(--gold)}
-    .form-intro h2{max-width:780px;margin:7px 0 15px;color:var(--plum);font-size:clamp(2.85rem,9vw,4.8rem);font-weight:700;line-height:.88;letter-spacing:-.035em;text-wrap:balance}.form-intro p{margin:0;max-width:760px;line-height:1.72;color:#685d56}
-    form{padding:30px 20px 36px}.form-section+ .form-section{margin-top:42px;padding-top:36px;border-top:1px solid var(--line)}
+    .form-card{overflow:hidden;border:1px solid rgba(74,33,79,.16);border-radius:24px;background:rgba(255,250,252,.98);box-shadow:var(--shadow)}
+    .form-intro{position:relative;padding:34px 22px 36px;border-bottom:1px solid var(--line);background:linear-gradient(125deg,rgba(143,107,143,.16),rgba(255,250,252,.98))}.form-intro::before{content:'';position:absolute;left:22px;top:31px;width:46px;height:2px;background:var(--gold)}
+    .form-intro h2{max-width:780px;margin:7px 0 15px;color:var(--plum);font-size:clamp(2.85rem,9vw,4.8rem);font-weight:700;line-height:.88;letter-spacing:-.035em;text-wrap:balance}.form-intro p{margin:0;max-width:760px;line-height:1.72;color:#665c67}
+    form{padding:30px 20px 36px}.form-section+ .form-section{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
     .section-heading{display:flex;gap:13px;align-items:flex-start;margin-bottom:24px}.section-number{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;font-size:.72rem;font-weight:700}
     .section-heading h3{margin:0;font-size:1.9rem;line-height:1}.section-heading p{margin:7px 0 0;color:var(--muted);font-size:.83rem;line-height:1.55}
     .field-grid{display:grid;gap:18px}.field{display:flex;flex-direction:column;gap:8px}label,legend{font-size:.82rem;font-weight:600}.required{color:#8c3d2f}
-    input,select,textarea{width:100%;border:1px solid rgba(111,79,105,.24);border-radius:12px;background:#fffdf9;color:var(--ink);outline:none}
+    input,select,textarea{width:100%;border:1px solid rgba(74,33,79,.22);border-radius:12px;background:#fffdfd;color:var(--ink);outline:none}
     input,select{min-height:52px;padding:0 14px}textarea{min-height:118px;padding:14px;resize:vertical;line-height:1.6}input[type=file]{min-height:auto;padding:12px}
+
+    input::placeholder,textarea::placeholder{color:#9b8e9d;opacity:1}
+    select option{background:#fffdfd;color:var(--ink)}
     input:focus,select:focus,textarea:focus{border-color:var(--focus);box-shadow:0 0 0 4px rgba(132,91,64,.14)}fieldset{margin:0;padding:0;border:0}legend{margin-bottom:12px}
-    .choice-grid{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}.choice-card{position:relative;display:flex;min-height:78px;align-items:center;justify-content:center;padding:15px;border:1px solid rgba(111,79,105,.22);border-radius:14px;background:#fffdf9;text-align:center;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease}
-    .choice-card input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.choice-card span{font-size:.79rem;font-weight:600;line-height:1.4;pointer-events:none}.choice-card.selected,.choice-card:has(input:checked){border-color:var(--focus);background:rgba(185,150,173,.18);box-shadow:0 0 0 3px rgba(111,79,105,.10)}
+    .choice-grid{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}.choice-card{position:relative;display:flex;min-height:78px;align-items:center;justify-content:center;padding:15px;border:1px solid rgba(111,79,105,.22);border-radius:14px;background:#fffdfd;text-align:center;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease}
+    .choice-card input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.choice-card span{font-size:.79rem;font-weight:600;line-height:1.4;pointer-events:none}.choice-card.selected,.choice-card:has(input:checked){border-color:var(--focus);background:rgba(143,107,143,.12);box-shadow:0 0 0 3px rgba(111,79,105,.10)}
     .choice-card:focus-within{outline:3px solid rgba(111,79,105,.34);outline-offset:3px}
-    .palette-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.palette-card{position:relative;overflow:hidden;border:1px solid rgba(111,79,105,.22);border-radius:14px;background:#fffdf9;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}.palette-card input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:3}.palette-card img{display:block;width:100%;height:112px;object-fit:cover;object-position:center}.palette-copy{padding:10px}.palette-copy strong{display:block;color:var(--plum);font-family:'Cormorant Garamond',serif;font-size:1.08rem;line-height:1.05}.palette-copy small{display:block;margin-top:4px;color:var(--muted);font-size:.64rem;line-height:1.35}.palette-card.selected,.palette-card:has(input:checked){border-color:var(--focus);box-shadow:0 0 0 3px rgba(111,79,105,.14)}.palette-card:focus-within{outline:3px solid rgba(111,79,105,.34);outline-offset:3px}
-    .palette-card.text-only{display:grid;place-items:center;min-height:168px;text-align:center;background:linear-gradient(145deg,#eadde7,#fffaf7)}
-    .info-note,.privacy-note,.timeline-note,.deposit-note{margin-top:16px;padding:16px;border:1px solid rgba(195,155,98,.35);border-radius:14px;background:rgba(255,255,255,.6);font-size:.79rem;line-height:1.6;color:#655950}
-    .pricing-lines{display:grid;gap:8px;margin-top:16px}.pricing-line{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fffdf9}.pricing-line strong{color:var(--plum);font-family:'Cormorant Garamond',serif;font-size:1.18rem}.pricing-line span{color:var(--muted);font-size:.76rem;text-align:right}
-    .helper-text{margin:0;color:#81756e;font-size:.72rem;line-height:1.5}.conditional{display:none;margin-top:20px;padding:20px;border-radius:16px;background:#f7f0e8;border:1px solid var(--line)}.conditional.visible{display:block}
-    .agreement{display:flex;gap:10px;align-items:flex-start;margin-top:24px;font-size:.77rem;line-height:1.55;color:#675c55}.agreement input{flex:0 0 auto;width:18px;height:18px;min-height:auto;margin-top:2px;accent-color:var(--focus)}
-    .submit-row{display:grid;gap:16px;margin-top:28px}.submit-button{min-height:56px;border:0;border-radius:999px;background:#4b3429;color:white;font-size:.77rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.submit-button:disabled{opacity:.62;cursor:not-allowed}
-    .success-screen{display:none;padding:64px 24px;text-align:center}.success-screen.visible{display:block}.success-screen h2{font-size:clamp(2.7rem,9vw,4.4rem);margin:0;line-height:.95}.success-screen p{max-width:620px;margin:18px auto 0;line-height:1.72;color:#6b6059}.reset-button{margin-top:24px;min-height:46px;padding:0 18px;border:1px solid #4b3429;border-radius:999px;background:transparent;color:#4b3429;font-weight:700}
-    footer{position:relative;padding:38px 20px 42px;text-align:center;font-size:.75rem;line-height:1.65;color:#786b75;background:#e7d9e3}footer::before{content:'';display:block;width:92px;height:1px;margin:0 auto 20px;background:var(--gold)}footer strong{display:block;margin-bottom:5px;color:var(--plum);font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;letter-spacing:.03em}
+    .palette-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.palette-card{position:relative;overflow:hidden;border:1px solid rgba(111,79,105,.22);border-radius:14px;background:#fffdfd;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}.palette-card input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:3}.palette-card img{display:block;width:100%;height:112px;object-fit:cover;object-position:center}.palette-copy{padding:10px}.palette-copy strong{display:block;color:var(--plum);font-family:'Cormorant Garamond',serif;font-size:1.08rem;line-height:1.05}.palette-copy small{display:block;margin-top:4px;color:var(--muted);font-size:.64rem;line-height:1.35}.palette-card.selected,.palette-card:has(input:checked){border-color:var(--focus);box-shadow:0 0 0 3px rgba(111,79,105,.14)}.palette-card:focus-within{outline:3px solid rgba(111,79,105,.34);outline-offset:3px}
+    .palette-card.text-only{display:grid;place-items:center;min-height:168px;text-align:center;background:linear-gradient(145deg,#f1e5f0,#fffafc)}
+    .info-note,.privacy-note,.timeline-note{margin:12px 0 0;color:#766a78;font-size:.76rem;line-height:1.6}
+    .protection-note,.deposit-note{margin-top:16px;padding:16px;border:1px solid rgba(185,144,77,.35);border-radius:14px;background:rgba(185,144,77,.09);font-size:.79rem;line-height:1.6;color:#4b3b49}
+    .pricing-result{display:none;margin:11px 0 0;color:var(--plum);font-size:.82rem;font-weight:600;line-height:1.5}.pricing-result.visible{display:block}
+    .helper-text{margin:0;color:#857987;font-size:.72rem;line-height:1.5}.conditional{display:none;margin-top:20px;padding:20px;border-radius:16px;background:#faf4fa;border:1px solid var(--line)}.conditional.visible{display:block}
+    .agreement{display:flex;gap:10px;align-items:flex-start;margin-top:24px;font-size:.77rem;line-height:1.55;color:#675d69}.agreement input{flex:0 0 auto;width:18px;height:18px;min-height:auto;margin-top:2px;accent-color:var(--focus)}
+    .submit-row{display:grid;gap:16px;margin-top:28px}.submit-button{min-height:56px;border:0;border-radius:999px;background:var(--plum);color:#fffafc;font-size:.77rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.submit-button:disabled{opacity:.62;cursor:not-allowed}
+    .success-screen{display:none;padding:64px 24px;text-align:center}.success-screen.visible{display:block}.success-screen h2{font-size:clamp(2.7rem,9vw,4.4rem);margin:0;line-height:.95}.success-screen p{max-width:620px;margin:18px auto 0;line-height:1.72;color:#6f6471}.reset-button{margin-top:24px;min-height:46px;padding:0 18px;border:1px solid var(--gold);border-radius:999px;background:transparent;color:var(--gold);font-weight:700}
+    footer{position:relative;padding:38px 20px 42px;text-align:center;font-size:.75rem;line-height:1.65;color:#6f6471;background:#efe4ef}footer::before{content:'';display:block;width:92px;height:1px;margin:0 auto 20px;background:var(--gold)}footer strong{display:block;margin-bottom:5px;color:var(--plum);font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;letter-spacing:.03em}
     @media(min-width:760px){.form-intro{padding:44px}.form-intro p{font-size:.94rem}form{padding:44px}.field-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.full-width{grid-column:1/-1}.choice-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.palette-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.palette-card img{height:148px}.submit-row{grid-template-columns:1fr auto;align-items:center}.submit-button{min-width:230px;padding:0 26px}}
     @media(hover:hover){.hero-button:hover,.submit-button:hover{transform:translateY(-2px)}.choice-card:hover,.palette-card:hover{transform:translateY(-2px);border-color:var(--gold)}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
@@ -118,10 +122,7 @@
                 <option value="Unsure">Unsure — studio recommendation</option>
               </select>
             </div>
-            <div class="pricing-lines" aria-label="Standard strand pricing">
-              <div class="pricing-line"><strong>48-inch strand</strong><span>$40 each · 3 for $110</span></div>
-              <div class="pricing-line"><strong>72-inch strand</strong><span>$50 each · 3 for $125</span></div>
-            </div>
+            <p id="pricingResult" class="pricing-result" aria-live="polite"></p>
             <div class="field-grid" style="margin-top:20px">
               <div class="field"><label for="width">Approximate installation width</label><input id="width" name="width" type="text" placeholder="Example: 42 inches"></div>
               <div class="field"><label for="strandCount">Estimated number of strands</label><input id="strandCount" name="strandCount" type="number" min="1" inputmode="numeric" placeholder="Optional"></div>
@@ -133,11 +134,11 @@
           <section class="form-section">
             <div class="section-heading"><span class="section-number">04</span><div><h3>Select a Signature Palette</h3><p>Choose the color language that best complements your space.</p></div></div>
             <fieldset><legend>Signature Palette <span class="required">*</span></legend><div class="palette-grid">
-              <label class="palette-card"><input type="radio" name="palette" value="Ocean Blue" required><img src="assets/ocean-blue.png" alt="Ocean Blue palette strand"><span class="palette-copy"><strong>Ocean Blue</strong><small>Sea glass, turquoise, deep teal, aquatic blues, and clear light-catching accents.</small></span></label>
-              <label class="palette-card"><input type="radio" name="palette" value="Amber Sunset"><img src="assets/amber-sunset.png" alt="Amber Sunset palette strand"><span class="palette-copy"><strong>Amber Sunset</strong><small>Amber, honey, rust, garnet, warm gold, and softly glowing earth tones.</small></span></label>
-              <label class="palette-card"><input type="radio" name="palette" value="Lavender Dream"><img src="assets/lavender-dream.png" alt="Lavender Dream palette strand"><span class="palette-copy"><strong>Lavender Dream</strong><small>Lavender, blush pink, rose, lilac, and translucent crystal accents.</small></span></label>
+              <label class="palette-card"><input type="radio" name="palette" value="Ocean Blue" required><img src="assets/ocean.blue.png" alt="Ocean Blue palette strand"><span class="palette-copy"><strong>Ocean Blue</strong><small>Sea glass, turquoise, deep teal, aquatic blues, and clear light-catching accents.</small></span></label>
+              <label class="palette-card"><input type="radio" name="palette" value="Amber Sunset"><img src="assets/amber.sunset.png" alt="Amber Sunset palette strand"><span class="palette-copy"><strong>Amber Sunset</strong><small>Amber, honey, rust, garnet, warm gold, and softly glowing earth tones.</small></span></label>
+              <label class="palette-card"><input type="radio" name="palette" value="Lavender Dream"><img src="assets/lavender.dream.png" alt="Lavender Dream palette strand"><span class="palette-copy"><strong>Lavender Dream</strong><small>Lavender, blush pink, rose, lilac, and translucent crystal accents.</small></span></label>
               <label class="palette-card"><input type="radio" name="palette" value="Champagne"><img src="assets/champagne.png" alt="Champagne palette strand"><span class="palette-copy"><strong>Champagne</strong><small>Ivory, champagne, pearl, soft gold, clear glass, and understated neutral shimmer.</small></span></label>
-              <label class="palette-card"><input type="radio" name="palette" value="Moonlit Muse — Signature Composition"><img src="assets/moonlit-muse.png" alt="Moonlit Muse signature palette strand"><span class="palette-copy"><strong>Moonlit Muse</strong><small>Signature Composition · Layered color, vintage character, unexpected contrast, and collected treasures.</small></span></label>
+              <label class="palette-card"><input type="radio" name="palette" value="Moonlit Muse — Signature Composition"><img src="assets/moonlit.muse.png" alt="Moonlit Muse signature palette strand"><span class="palette-copy"><strong>Moonlit Muse</strong><small>Signature Composition · Layered color, vintage character, unexpected contrast, and collected treasures.</small></span></label>
               <label class="palette-card text-only"><input type="radio" name="palette" value="Curated for Me"><span class="palette-copy"><strong>Curated for Me</strong><small>Allow the studio to compose a palette around your room, inspiration, or story.</small></span></label>
             </div></fieldset>
             <div class="field" style="margin-top:18px"><label for="paletteNotes">Color adjustments or palette notes</label><textarea id="paletteNotes" name="paletteNotes" placeholder="Optional: note colors you would like emphasized, softened, added, or avoided."></textarea></div>
@@ -159,7 +160,7 @@
                 <div class="field"><label for="itemCondition">Current condition</label><input id="itemCondition" name="itemCondition" type="text" placeholder="Broken clasp, loose stones, intact, etc."></div>
                 <div class="field full-width"><label for="keepsakePhoto">Photo of personal keepsakes</label><input id="keepsakePhoto" name="keepsakePhoto" type="file" accept="image/*"><p class="helper-text">Visual demonstration only. File delivery will be activated when the upload backend is connected.</p></div>
               </div>
-              <p class="info-note">The studio will review submitted pieces before confirming whether they can be safely incorporated. No sentimental item will be altered until the proposed use and design have been approved by the client.</p>
+              <p class="protection-note">The studio will review submitted pieces before confirming whether they can be safely incorporated. No sentimental item will be altered until the proposed use and design have been approved by the client.</p>
             </div>
           </section>
 
@@ -217,12 +218,27 @@
     const resetButton = document.getElementById('resetButton');
     const submitButton = document.getElementById('submitButton');
     const keepsakeFields = document.getElementById('keepsakeFields');
+    const strandLength = document.getElementById('strandLength');
+    const pricingResult = document.getElementById('pricingResult');
 
     function syncSelectedCards() {
       document.querySelectorAll('.choice-card, .palette-card').forEach(card => {
         const control = card.querySelector('input');
         card.classList.toggle('selected', Boolean(control && control.checked));
       });
+    }
+
+
+    function syncPricing() {
+      const pricingByLength = {
+        '48-inch': '48-inch strand: $40 each — 3 for $110',
+        '72-inch': '72-inch strand: $50 each — 3 for $125',
+        'Custom length': 'Custom length: pricing is confirmed after Studio Review.',
+        'Unsure': 'Studio recommendation: length and pricing will be discussed during Studio Review.'
+      };
+      const message = pricingByLength[strandLength.value] || '';
+      pricingResult.textContent = message;
+      pricingResult.classList.toggle('visible', Boolean(message));
     }
 
     function syncKeepsakeFields() {
@@ -235,6 +251,7 @@
     document.addEventListener('change', event => {
       if (event.target.matches('input[type="radio"], input[type="checkbox"]')) syncSelectedCards();
       if (event.target.name === 'materialsChoice') syncKeepsakeFields();
+      if (event.target === strandLength) syncPricing();
     });
 
     form.addEventListener('submit', event => {
@@ -256,6 +273,7 @@
       form.reset();
       syncSelectedCards();
       syncKeepsakeFields();
+      syncPricing();
       successScreen.classList.remove('visible');
       formContent.hidden = false;
       document.getElementById('design-request').scrollIntoView({behavior:'smooth', block:'start'});
@@ -263,6 +281,7 @@
 
     syncSelectedCards();
     syncKeepsakeFields();
+    syncPricing();
   </script>
 </body>
 </html>
