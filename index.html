@@ -8,7 +8,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Custom Beaded Strand Request | Stone & Stardust" />
   <meta property="og:description" content="Choose your strand length and color direction, then submit photos of your window and room for review." />
-  <meta property="og:image" content="https://webdevn3v.github.io/moonstoneandmuse/stone.star.hero.png" />
+  <meta property="og:image" content="https://webdevn3v.github.io/stoneandstardust/stone.star.hero.png" />
   <meta property="og:image:alt" content="Handcrafted beaded window strands filtering warm natural light." />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Custom Beaded Strand Request | Stone &amp; Stardust</title>
@@ -505,6 +505,58 @@
       .palette-card:hover { border-color:var(--gold); }
     }
 
+
+    @media (max-width:420px) {
+      main {
+        width:calc(100% - 12px);
+        padding-bottom:44px;
+      }
+
+      .form-card {
+        margin-top:-12px;
+        border-radius:18px;
+      }
+
+      .form-intro {
+        padding:30px 16px 28px;
+      }
+
+      .form-intro::before {
+        left:16px;
+        top:27px;
+      }
+
+      form {
+        padding:26px 16px 30px;
+      }
+
+      .section-heading {
+        gap:10px;
+      }
+
+      .choice-grid,
+      .palette-grid {
+        grid-template-columns:1fr;
+      }
+
+      .palette-card img {
+        height:180px;
+      }
+
+      input[type="file"] {
+        max-width:100%;
+        font-size:.78rem;
+      }
+
+      .submit-button {
+        width:100%;
+      }
+
+      .success-screen {
+        padding:50px 18px;
+      }
+    }
+
     @media (prefers-reduced-motion:reduce) {
       html { scroll-behavior:auto; }
       *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; }
@@ -526,7 +578,7 @@
         </header>
 
         <form id="designRequestForm" action="https://formspree.io/f/mdennvar" method="POST" enctype="multipart/form-data" novalidate>
-          <input type="hidden" name="_next" value="https://webdevn3v.github.io/moonstoneandmuse/?submitted=true" />
+          <input type="hidden" name="_next" value="https://webdevn3v.github.io/stoneandstardust/?submitted=true" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <section class="form-section">
             <div class="section-heading">
