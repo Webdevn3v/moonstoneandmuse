@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#f3ebf2" />
-  <meta name="description" content="Request custom handcrafted beaded window strands from Moonstone & Muse." />
+  <meta name="description" content="Request custom handcrafted beaded window strands from Stone & Stardust." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Custom Beaded Strand Request | Moonstone & Muse" />
+  <meta property="og:title" content="Custom Beaded Strand Request | Stone & Stardust" />
   <meta property="og:description" content="Choose your strand length and color direction, then submit photos of your window and room for review." />
-  <meta property="og:image" content="https://webdevn3v.github.io/moonstoneandmuse/moonstone.hero.png" />
+  <meta property="og:image" content="https://webdevn3v.github.io/moonstoneandmuse/stone.star.hero.png" />
   <meta property="og:image:alt" content="Handcrafted beaded window strands filtering warm natural light." />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>Custom Beaded Strand Request | Moonstone &amp; Muse</title>
+  <title>Custom Beaded Strand Request | Stone &amp; Stardust</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -513,19 +513,21 @@
 </head>
 <body>
   <header class="hero">
-    <img class="hero-image" src="moonstone.hero.png" alt="Handcrafted beaded window strands in warm natural light" />
+    <img class="hero-image" src="stone.star.hero.png" alt="Handcrafted beaded window strands in warm natural light" />
   </header>
 
   <main id="design-request">
     <section class="form-card">
       <div id="formContent">
         <header class="form-intro">
-          <p class="eyebrow">Moonstone &amp; Muse</p>
+          <p class="eyebrow">Stone &amp; Stardust</p>
           <h1>Custom Beaded Strand Request</h1>
           <p>Complete this form to request a custom beaded strand. You will be contacted to confirm the details.</p>
         </header>
 
-        <form id="designRequestForm" novalidate>
+        <form id="designRequestForm" action="https://formspree.io/f/mdennvar" method="POST" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="_next" value="https://webdevn3v.github.io/moonstoneandmuse/?submitted=true" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <section class="form-section">
             <div class="section-heading">
               <span class="section-number">01</span>
@@ -624,11 +626,6 @@
                   <span class="palette-copy"><strong>Golden Sunset</strong></span>
                 </label>
 
-                <label class="palette-card text-only">
-                  <input name="colorChoice" type="radio" value="Earth Elements" />
-                  <span class="palette-copy"><strong>Earth Elements</strong></span>
-                </label>
-
                 <label class="palette-card">
                   <input name="colorChoice" type="radio" value="Lilac & Roses" />
                   <img src="lavender.dream.png" alt="Lilac and Roses beaded strand" />
@@ -642,9 +639,9 @@
                 </label>
 
                 <label class="palette-card">
-                  <input name="colorChoice" type="radio" value="Signature Moonlit Mix" />
-                  <img src="moonlit.muse.png" alt="Signature Moonlit Mix beaded strand" />
-                  <span class="palette-copy"><strong>Signature Moonlit Mix</strong></span>
+                  <input name="colorChoice" type="radio" value="Signature Sunlit Mix" />
+                  <img src="moonlit.muse.png" alt="Signature Sunlit Mix beaded strand" />
+                  <span class="palette-copy"><strong>Signature Sunlit Mix</strong></span>
                 </label>
               </div>
             </fieldset>
@@ -678,15 +675,11 @@
                 <input id="windowPhoto" name="windowPhoto" type="file" accept="image/*" required />
               </div>
 
-              <div class="field full-width">
-                <label for="roomPhoto">Upload photo of the room</label>
-                <input id="roomPhoto" name="roomPhoto" type="file" accept="image/*" />
-              </div>
             </div>
 
             <details class="privacy-details">
               <summary>Privacy Policy</summary>
-              <p>Your photos and details are sent securely through Formspree and are used only to review your request. They are not sold, shared, or used for marketing.</p>
+              <p>Your photos and details are sent securely and are used only to review your request. They are not sold, shared, or used for marketing.</p>
             </details>
           </section>
 
@@ -737,16 +730,15 @@
   </main>
 
   <footer>
-    <strong>Moonstone &amp; Muse</strong>
+    <strong>Stone &amp; Stardust</strong>
     Custom Beaded Window Strands
   </footer>
 
   <!--
     BEFORE LAUNCH:
-    1. Add the live Formspree action URL to the form.
-    2. Confirm that file uploads are enabled for the selected Formspree plan.
-    3. Test delivery to moonstoneandmuse2026@gmail.com.
-    4. Replace the social-preview URL after the final domain is selected.
+    1. Confirm the first FormSubmit verification email sent to stonaandstardust@outlook.com.
+    2. Submit a full test request, including the window photo.
+    3. Replace the social-preview URL after the final domain is selected.
   -->
 
   <script>
@@ -785,20 +777,16 @@
     });
 
     form.addEventListener('submit', event => {
-      event.preventDefault();
-
       if (!form.checkValidity()) {
+        event.preventDefault();
         form.reportValidity();
         return;
       }
 
-      submitButton.disabled = true;
       const firstName = document.getElementById('name').value.trim().split(/\s+/)[0] || 'Client';
-      customerName.textContent = firstName;
-      formContent.hidden = true;
-      successScreen.classList.add('visible');
-      document.getElementById('design-request').scrollIntoView({ behavior:'smooth', block:'start' });
-      submitButton.disabled = false;
+      sessionStorage.setItem('stoneAndStardustCustomerName', firstName);
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
     });
 
     resetButton.addEventListener('click', () => {
@@ -807,8 +795,19 @@
       syncCustomLength();
       successScreen.classList.remove('visible');
       formContent.hidden = false;
+      submitButton.disabled = false;
+      submitButton.textContent = 'Submit Request';
+      history.replaceState({}, document.title, window.location.pathname);
       document.getElementById('design-request').scrollIntoView({ behavior:'smooth', block:'start' });
     });
+
+    const submitted = new URLSearchParams(window.location.search).get('submitted') === 'true';
+    if (submitted) {
+      customerName.textContent = sessionStorage.getItem('stoneAndStardustCustomerName') || 'Client';
+      sessionStorage.removeItem('stoneAndStardustCustomerName');
+      formContent.hidden = true;
+      successScreen.classList.add('visible');
+    }
 
     syncSelectedCards();
     syncCustomLength();
