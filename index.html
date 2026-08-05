@@ -341,35 +341,10 @@
     }
 
     .pricing-card {
-      position:relative;
-      display:block;
       padding:18px;
       border:1px solid rgba(185,144,77,.34);
       border-radius:14px;
       background:linear-gradient(145deg,rgba(185,144,77,.08),rgba(255,250,252,.96));
-      cursor:pointer;
-      transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease;
-    }
-
-    .pricing-card input {
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      opacity:0;
-      cursor:pointer;
-    }
-
-    .pricing-card.selected,
-    .pricing-card:has(input:checked) {
-      border-color:var(--focus);
-      background:rgba(143,107,143,.12);
-      box-shadow:0 0 0 3px rgba(111,79,105,.10);
-    }
-
-    .pricing-card:focus-within {
-      outline:3px solid rgba(111,79,105,.34);
-      outline-offset:3px;
     }
 
     .pricing-card strong {
@@ -557,7 +532,7 @@
       form { padding:44px; }
       .field-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
       .full-width { grid-column:1 / -1; }
-      .choice-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+      .choice-grid { grid-template-columns:repeat(5,minmax(0,1fr)); }
       .pricing-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
       .palette-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
       .palette-card img { height:152px; }
@@ -568,11 +543,9 @@
     @media (hover:hover) {
       .submit-button:hover,
       .choice-card:hover,
-      .palette-card:hover,
-      .pricing-card:hover { transform:translateY(-2px); }
+      .palette-card:hover { transform:translateY(-2px); }
       .choice-card:hover,
-      .palette-card:hover,
-      .pricing-card:hover { border-color:var(--gold); }
+      .palette-card:hover { border-color:var(--gold); }
     }
 
 
@@ -689,43 +662,56 @@
               </div>
             </div>
 
-            <fieldset>
-              <legend>Choose a strand option <span class="required">*</span></legend>
+            <div class="pricing-grid" aria-label="Strand pricing">
+              <div class="pricing-card">
+                <strong>48&quot; Strand</strong>
+                <span>$45 each<br /><b>3 strands for $120</b></span>
+              </div>
 
-              <div class="pricing-grid" aria-label="Strand pricing">
-                <label class="pricing-card">
-                  <input name="strandOption" type="radio" value="48 inch strand — 1 for $45" required />
-                  <strong>48&quot; Strand</strong>
-                  <span><b>1 strand — $45</b></span>
+              <div class="pricing-card">
+                <strong>72&quot; Strand</strong>
+                <span>$55 each<br /><b>3 strands for $140</b></span>
+              </div>
+            </div>
+
+            <p class="pricing-note">Custom lengths are available. Pricing will be confirmed based on the requested length.</p>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="quantity">Quantity <span class="required">*</span></label>
+                <input id="quantity" name="quantity" type="number" min="1" inputmode="numeric" required />
+              </div>
+            </div>
+
+            <fieldset style="margin-top:18px">
+              <legend>Choose a length <span class="required">*</span></legend>
+              <div class="choice-grid">
+                <label class="choice-card">
+                  <input name="length" type="radio" value="48 inches" required />
+                  <span>48&quot;</span>
                 </label>
 
-                <label class="pricing-card">
-                  <input name="strandOption" type="radio" value="48 inch bundle — 3 for $120" />
-                  <strong>48&quot; Bundle</strong>
-                  <span><b>3 strands — $120</b></span>
+                <label class="choice-card">
+                  <input name="length" type="radio" value="72 inches" />
+                  <span>72&quot;</span>
                 </label>
 
-                <label class="pricing-card">
-                  <input name="strandOption" type="radio" value="72 inch strand — 1 for $55" />
-                  <strong>72&quot; Strand</strong>
-                  <span><b>1 strand — $55</b></span>
+                <label class="choice-card">
+                  <input name="length" type="radio" value="48 inch bundle — 3 strands for $120" />
+                  <span>48&quot; Bundle<br />3 for $120</span>
                 </label>
 
-                <label class="pricing-card">
-                  <input name="strandOption" type="radio" value="72 inch bundle — 3 for $140" />
-                  <strong>72&quot; Bundle</strong>
-                  <span><b>3 strands — $140</b></span>
+                <label class="choice-card">
+                  <input name="length" type="radio" value="72 inch bundle — 3 strands for $140" />
+                  <span>72&quot; Bundle<br />3 for $140</span>
                 </label>
 
-                <label class="pricing-card">
-                  <input id="customLengthChoice" name="strandOption" type="radio" value="Custom length" />
-                  <strong>Custom Length</strong>
-                  <span>Pricing confirmed after review</span>
+                <label class="choice-card">
+                  <input id="customLengthChoice" name="length" type="radio" value="Custom length" />
+                  <span>Custom Length</span>
                 </label>
               </div>
             </fieldset>
-
-            <p class="pricing-note">Select one option. Custom-length pricing will be confirmed based on the requested size.</p>
 
             <div id="customLengthField" class="custom-length" aria-hidden="true">
               <div class="field">
@@ -863,14 +849,14 @@
     const customLengthInput = document.getElementById('customLength');
 
     function syncSelectedCards() {
-      document.querySelectorAll('.choice-card, .palette-card, .pricing-card').forEach(card => {
+      document.querySelectorAll('.choice-card, .palette-card').forEach(card => {
         const control = card.querySelector('input');
         card.classList.toggle('selected', Boolean(control && control.checked));
       });
     }
 
     function syncCustomLength() {
-      const selectedLength = document.querySelector('input[name="strandOption"]:checked');
+      const selectedLength = document.querySelector('input[name="length"]:checked');
       const isCustom = Boolean(selectedLength && selectedLength.value === 'Custom length');
       customLengthField.classList.toggle('visible', isCustom);
       customLengthField.setAttribute('aria-hidden', String(!isCustom));
@@ -882,7 +868,7 @@
       if (event.target.matches('input[type="radio"], input[type="checkbox"]')) {
         syncSelectedCards();
       }
-      if (event.target.name === 'strandOption') {
+      if (event.target.name === 'length') {
         syncCustomLength();
       }
     });
