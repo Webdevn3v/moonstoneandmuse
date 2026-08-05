@@ -341,10 +341,35 @@
     }
 
     .pricing-card {
+      position:relative;
+      display:block;
       padding:18px;
       border:1px solid rgba(185,144,77,.34);
       border-radius:14px;
       background:linear-gradient(145deg,rgba(185,144,77,.08),rgba(255,250,252,.96));
+      cursor:pointer;
+      transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease;
+    }
+
+    .pricing-card input {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      opacity:0;
+      cursor:pointer;
+    }
+
+    .pricing-card.selected,
+    .pricing-card:has(input:checked) {
+      border-color:var(--focus);
+      background:rgba(143,107,143,.12);
+      box-shadow:0 0 0 3px rgba(111,79,105,.10);
+    }
+
+    .pricing-card:focus-within {
+      outline:3px solid rgba(111,79,105,.34);
+      outline-offset:3px;
     }
 
     .pricing-card strong {
@@ -543,9 +568,11 @@
     @media (hover:hover) {
       .submit-button:hover,
       .choice-card:hover,
-      .palette-card:hover { transform:translateY(-2px); }
+      .palette-card:hover,
+      .pricing-card:hover { transform:translateY(-2px); }
       .choice-card:hover,
-      .palette-card:hover { border-color:var(--gold); }
+      .palette-card:hover,
+      .pricing-card:hover { border-color:var(--gold); }
     }
 
 
@@ -662,46 +689,43 @@
               </div>
             </div>
 
-            <div class="pricing-grid" aria-label="Strand pricing">
-              <div class="pricing-card">
-                <strong>48&quot; Strand</strong>
-                <span>$45 each<br /><b>3 strands for $120</b></span>
-              </div>
+            <fieldset>
+              <legend>Choose a strand option <span class="required">*</span></legend>
 
-              <div class="pricing-card">
-                <strong>72&quot; Strand</strong>
-                <span>$55 each<br /><b>3 strands for $140</b></span>
-              </div>
-            </div>
-
-            <p class="pricing-note">Custom lengths are available. Pricing will be confirmed based on the requested length.</p>
-
-            <div class="field-grid">
-              <div class="field">
-                <label for="quantity">Quantity <span class="required">*</span></label>
-                <input id="quantity" name="quantity" type="number" min="1" inputmode="numeric" required />
-              </div>
-            </div>
-
-            <fieldset style="margin-top:18px">
-              <legend>Choose a length <span class="required">*</span></legend>
-              <div class="choice-grid">
-                <label class="choice-card">
-                  <input name="length" type="radio" value="48 inches" required />
-                  <span>48&quot;</span>
+              <div class="pricing-grid" aria-label="Strand pricing">
+                <label class="pricing-card">
+                  <input name="strandOption" type="radio" value="48 inch strand — 1 for $45" required />
+                  <strong>48&quot; Strand</strong>
+                  <span><b>1 strand — $45</b></span>
                 </label>
 
-                <label class="choice-card">
-                  <input name="length" type="radio" value="72 inches" />
-                  <span>72&quot;</span>
+                <label class="pricing-card">
+                  <input name="strandOption" type="radio" value="48 inch bundle — 3 for $120" />
+                  <strong>48&quot; Bundle</strong>
+                  <span><b>3 strands — $120</b></span>
                 </label>
 
-                <label class="choice-card">
-                  <input id="customLengthChoice" name="length" type="radio" value="Custom length" />
-                  <span>Custom Length</span>
+                <label class="pricing-card">
+                  <input name="strandOption" type="radio" value="72 inch strand — 1 for $55" />
+                  <strong>72&quot; Strand</strong>
+                  <span><b>1 strand — $55</b></span>
+                </label>
+
+                <label class="pricing-card">
+                  <input name="strandOption" type="radio" value="72 inch bundle — 3 for $140" />
+                  <strong>72&quot; Bundle</strong>
+                  <span><b>3 strands — $140</b></span>
+                </label>
+
+                <label class="pricing-card">
+                  <input id="customLengthChoice" name="strandOption" type="radio" value="Custom length" />
+                  <strong>Custom Length</strong>
+                  <span>Pricing confirmed after review</span>
                 </label>
               </div>
             </fieldset>
+
+            <p class="pricing-note">Select one option. Custom-length pricing will be confirmed based on the requested size.</p>
 
             <div id="customLengthField" class="custom-length" aria-hidden="true">
               <div class="field">
@@ -774,27 +798,6 @@
             <div class="section-heading">
               <span class="section-number">05</span>
               <div>
-                <h2>Window Photo</h2>
-              </div>
-            </div>
-
-            <div class="notice">
-              <strong>Email your window photo separately</strong><br />
-              After submitting this request, please email a clear photo of your window to
-              <a href="mailto:stoneandstardust2026@outlook.com">stoneandstardust2026@outlook.com</a>.
-              Include your name in the email so the photo can be matched to your request.
-            </div>
-
-            <details class="privacy-details">
-              <summary>Privacy Policy</summary>
-              <p>Your form details and any window photos you email are used only to review your request. They are not sold, shared, or used for marketing.</p>
-            </details>
-          </section>
-
-          <section class="form-section">
-            <div class="section-heading">
-              <span class="section-number">06</span>
-              <div>
                 <h2>Additional Notes</h2>
               </div>
             </div>
@@ -845,7 +848,7 @@
   <!--
     BEFORE LAUNCH:
     1. Confirm Formspree submissions are delivered correctly.
-    2. Submit a full test request and email the window photo separately to stoneandstardust2026@outlook.com.
+    2. Submit a full test request and confirm it arrives at stoneandstardust2026@outlook.com.
     3. Replace the social-preview URL after the final domain is selected.
   -->
 
@@ -860,14 +863,14 @@
     const customLengthInput = document.getElementById('customLength');
 
     function syncSelectedCards() {
-      document.querySelectorAll('.choice-card, .palette-card').forEach(card => {
+      document.querySelectorAll('.choice-card, .palette-card, .pricing-card').forEach(card => {
         const control = card.querySelector('input');
         card.classList.toggle('selected', Boolean(control && control.checked));
       });
     }
 
     function syncCustomLength() {
-      const selectedLength = document.querySelector('input[name="length"]:checked');
+      const selectedLength = document.querySelector('input[name="strandOption"]:checked');
       const isCustom = Boolean(selectedLength && selectedLength.value === 'Custom length');
       customLengthField.classList.toggle('visible', isCustom);
       customLengthField.setAttribute('aria-hidden', String(!isCustom));
@@ -879,7 +882,7 @@
       if (event.target.matches('input[type="radio"], input[type="checkbox"]')) {
         syncSelectedCards();
       }
-      if (event.target.name === 'length') {
+      if (event.target.name === 'strandOption') {
         syncCustomLength();
       }
     });
