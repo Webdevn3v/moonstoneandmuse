@@ -333,6 +333,48 @@
       line-height:1.5;
     }
 
+
+    .pricing-grid {
+      display:grid;
+      gap:12px;
+      margin-bottom:22px;
+    }
+
+    .pricing-card {
+      padding:18px;
+      border:1px solid rgba(185,144,77,.34);
+      border-radius:14px;
+      background:linear-gradient(145deg,rgba(185,144,77,.08),rgba(255,250,252,.96));
+    }
+
+    .pricing-card strong {
+      display:block;
+      color:var(--plum);
+      font-family:"Cormorant Garamond",serif;
+      font-size:1.35rem;
+      line-height:1.05;
+    }
+
+    .pricing-card span {
+      display:block;
+      margin-top:7px;
+      color:#5f5361;
+      font-size:.8rem;
+      line-height:1.55;
+    }
+
+    .pricing-card b {
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .pricing-note {
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:.74rem;
+      line-height:1.55;
+    }
+
     .custom-length {
       display:none;
       margin-top:16px;
@@ -491,6 +533,7 @@
       .field-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
       .full-width { grid-column:1 / -1; }
       .choice-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+      .pricing-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
       .palette-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
       .palette-card img { height:152px; }
       .submit-row { grid-template-columns:1fr auto; align-items:center; }
@@ -577,7 +620,7 @@
           <p>Complete this form to request a custom beaded strand. You will be contacted to confirm the details.</p>
         </header>
 
-        <form id="designRequestForm" action="https://formspree.io/f/mdennvar" method="POST" enctype="multipart/form-data" novalidate>
+        <form id="designRequestForm" action="https://formspree.io/f/mdennvar" method="POST" novalidate>
           <input type="hidden" name="_next" value="https://webdevn3v.github.io/stoneandstardust/?submitted=true" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <section class="form-section">
@@ -615,9 +658,23 @@
             <div class="section-heading">
               <span class="section-number">02</span>
               <div>
-                <h2>Length Options</h2>
+                <h2>Choose Your Strand</h2>
               </div>
             </div>
+
+            <div class="pricing-grid" aria-label="Strand pricing">
+              <div class="pricing-card">
+                <strong>48&quot; Strand</strong>
+                <span>$45 each<br /><b>3 strands for $120</b></span>
+              </div>
+
+              <div class="pricing-card">
+                <strong>72&quot; Strand</strong>
+                <span>$55 each<br /><b>3 strands for $140</b></span>
+              </div>
+            </div>
+
+            <p class="pricing-note">Custom lengths are available. Pricing will be confirmed based on the requested length.</p>
 
             <div class="field-grid">
               <div class="field">
@@ -717,21 +774,20 @@
             <div class="section-heading">
               <span class="section-number">05</span>
               <div>
-                <h2>Upload Photos</h2>
+                <h2>Window Photo</h2>
               </div>
             </div>
 
-            <div class="field-grid">
-              <div class="field full-width">
-                <label for="windowPhoto">Upload photo of window <span class="required">*</span></label>
-                <input id="windowPhoto" name="windowPhoto" type="file" accept="image/*" required />
-              </div>
-
+            <div class="notice">
+              <strong>Email your window photo separately</strong><br />
+              After submitting this request, please email a clear photo of your window to
+              <a href="mailto:stoneandstardust2026@outlook.com">stoneandstardust2026@outlook.com</a>.
+              Include your name in the email so the photo can be matched to your request.
             </div>
 
             <details class="privacy-details">
               <summary>Privacy Policy</summary>
-              <p>Your photos and details are sent securely and are used only to review your request. They are not sold, shared, or used for marketing.</p>
+              <p>Your form details and any window photos you email are used only to review your request. They are not sold, shared, or used for marketing.</p>
             </details>
           </section>
 
@@ -788,8 +844,8 @@
 
   <!--
     BEFORE LAUNCH:
-    1. Confirm the first FormSubmit verification email sent to stonaandstardust@outlook.com.
-    2. Submit a full test request, including the window photo.
+    1. Confirm Formspree submissions are delivered correctly.
+    2. Submit a full test request and email the window photo separately to stoneandstardust2026@outlook.com.
     3. Replace the social-preview URL after the final domain is selected.
   -->
 
