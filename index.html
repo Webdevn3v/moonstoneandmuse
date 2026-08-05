@@ -333,48 +333,6 @@
       line-height:1.5;
     }
 
-
-    .pricing-grid {
-      display:grid;
-      gap:12px;
-      margin-bottom:22px;
-    }
-
-    .pricing-card {
-      padding:18px;
-      border:1px solid rgba(185,144,77,.34);
-      border-radius:14px;
-      background:linear-gradient(145deg,rgba(185,144,77,.08),rgba(255,250,252,.96));
-    }
-
-    .pricing-card strong {
-      display:block;
-      color:var(--plum);
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.35rem;
-      line-height:1.05;
-    }
-
-    .pricing-card span {
-      display:block;
-      margin-top:7px;
-      color:#5f5361;
-      font-size:.8rem;
-      line-height:1.55;
-    }
-
-    .pricing-card b {
-      color:var(--gold);
-      font-weight:700;
-    }
-
-    .pricing-note {
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:.74rem;
-      line-height:1.55;
-    }
-
     .custom-length {
       display:none;
       margin-top:16px;
@@ -533,7 +491,6 @@
       .field-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
       .full-width { grid-column:1 / -1; }
       .choice-grid { grid-template-columns:repeat(5,minmax(0,1fr)); }
-      .pricing-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
       .palette-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
       .palette-card img { height:152px; }
       .submit-row { grid-template-columns:1fr auto; align-items:center; }
@@ -658,23 +615,9 @@
             <div class="section-heading">
               <span class="section-number">02</span>
               <div>
-                <h2>Choose Your Strand</h2>
+                <h2>Length Options</h2>
               </div>
             </div>
-
-            <div class="pricing-grid" aria-label="Strand pricing">
-              <div class="pricing-card">
-                <strong>48&quot; Strand</strong>
-                <span>$45 each<br /><b>3 strands for $120</b></span>
-              </div>
-
-              <div class="pricing-card">
-                <strong>72&quot; Strand</strong>
-                <span>$55 each<br /><b>3 strands for $140</b></span>
-              </div>
-            </div>
-
-            <p class="pricing-note">Custom lengths are available. Pricing will be confirmed based on the requested length.</p>
 
             <div class="field-grid">
               <div class="field">
@@ -687,13 +630,13 @@
               <legend>Choose a length <span class="required">*</span></legend>
               <div class="choice-grid">
                 <label class="choice-card">
-                  <input name="length" type="radio" value="48 inches" required />
-                  <span>48&quot;</span>
+                  <input name="length" type="radio" value="48 inch strand — $45 each" required />
+                  <span>48&quot; Strand<br />$45 each</span>
                 </label>
 
                 <label class="choice-card">
-                  <input name="length" type="radio" value="72 inches" />
-                  <span>72&quot;</span>
+                  <input name="length" type="radio" value="72 inch strand — $55 each" />
+                  <span>72&quot; Strand<br />$55 each</span>
                 </label>
 
                 <label class="choice-card">
