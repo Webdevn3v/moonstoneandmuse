@@ -626,35 +626,17 @@
               </div>
             </div>
 
-            <fieldset style="margin-top:18px">
-              <legend>Choose a length <span class="required">*</span></legend>
-              <div class="choice-grid">
-                <label class="choice-card">
-                  <input name="length" type="radio" value="48 inch strand — $45 each" required />
-                  <span>48&quot; Strand<br />$45 each</span>
-                </label>
-
-                <label class="choice-card">
-                  <input name="length" type="radio" value="72 inch strand — $55 each" />
-                  <span>72&quot; Strand<br />$55 each</span>
-                </label>
-
-                <label class="choice-card">
-                  <input name="length" type="radio" value="48 inch bundle — 3 strands for $120" />
-                  <span>48&quot; Bundle<br />3 for $120</span>
-                </label>
-
-                <label class="choice-card">
-                  <input name="length" type="radio" value="72 inch bundle — 3 strands for $140" />
-                  <span>72&quot; Bundle<br />3 for $140</span>
-                </label>
-
-                <label class="choice-card">
-                  <input id="customLengthChoice" name="length" type="radio" value="Custom length" />
-                  <span>Custom Length</span>
-                </label>
-              </div>
-            </fieldset>
+            <div class="field" style="margin-top:18px">
+              <label for="length">Choose a length <span class="required">*</span></label>
+              <select id="length" name="length" required>
+                <option value="" selected disabled>Select an option</option>
+                <option value="48 inch strand — $45 each">48&quot; Strand — $45 each</option>
+                <option value="72 inch strand — $55 each">72&quot; Strand — $55 each</option>
+                <option value="48 inch bundle — 3 for $120">48&quot; Bundle — 3 for $120</option>
+                <option value="72 inch bundle — 3 for $140">72&quot; Bundle — 3 for $140</option>
+                <option value="Custom length">Custom Length</option>
+              </select>
+            </div>
 
             <div id="customLengthField" class="custom-length" aria-hidden="true">
               <div class="field">
@@ -799,7 +781,7 @@
     }
 
     function syncCustomLength() {
-      const selectedLength = document.querySelector('input[name="length"]:checked');
+      const selectedLength = document.getElementById('length');
       const isCustom = Boolean(selectedLength && selectedLength.value === 'Custom length');
       customLengthField.classList.toggle('visible', isCustom);
       customLengthField.setAttribute('aria-hidden', String(!isCustom));
@@ -811,7 +793,7 @@
       if (event.target.matches('input[type="radio"], input[type="checkbox"]')) {
         syncSelectedCards();
       }
-      if (event.target.name === 'length') {
+      if (event.target.id === 'length') {
         syncCustomLength();
       }
     });
